@@ -1,105 +1,108 @@
 # Prelude
 
-> Role models are important. <br/>
-> -- Officer Alex J. Murphy / RoboCop
+> Modelos de comportamento são importantes. <br/>
+> -- Agente de polícia Alex J. Murphy / RoboCop
 
-One thing has always bothered me as Ruby developer - Python developers
-have a great programming style reference
-([PEP-8](http://www.python.org/dev/peps/pep-0008/)) and we never got
-an official guide, documenting Ruby coding style and best
-practices. And I do believe that style matters. I also believe that
-such fine fellows, like us Ruby developers, should be quite capable to
-produce this coveted document.
+Uma das coisas que me perturba como programador em  Ruby developer - 
+os programadores em Python têm um excelente livro de estilo de 
+referência ([PEP-8](http://www.python.org/dev/peps/pep-0008/)) 
+e nós nunca concebemos um guia oficial, documentando o estilo de 
+codifição e boas práticas em Ruby. Acredito que o estilo é importante.
+Acredito também que gente tão boa como nós programadores em Ruby, seremos
+suficientemente capazes para produzirmos tão cobiçado documento.
 
-This guide started its life as our internal company Ruby coding guidelines
-(written by yours truly). At some point I decided that the work I was
-doing might be interesting to members of the Ruby community in general
-and that the world had little need for another internal company
-guideline. But the world could certainly benefit from a
-community-driven and community-sanctioned set of practices, idioms and
-style prescriptions for Ruby programming.
+Este guia começou a sua vida como directriz interna da firma para 
+codificação em Ruby (criado por este vosso servo). A certa altura decidi
+que este trabalho poderia ser interessante para os membros da comunidade
+Ruby em geral e que o mundo tinha pouca falta de mais um guia interno. 
+Mas que o mundo poderia tirar partido de prescrições orientadas pela 
+comunidade e validadas pela comunidade de um conjunto de práticas, idiomas
+e estilo para programar em Ruby.
 
-Since the inception of the guide I've received a lot of feedback from
-members of the exceptional Ruby community around the world. Thanks for
-all the suggestions and the support! Together we can make a resource
-beneficial to each and every Ruby developer out there.
+Desda criação deste guia que tenho recebido retorno de membros da 
+excepcional comunidade Ruby à volta do globo. Muito obrigado pelas
+sugestões e apoio! Em conjunto podemos torná-lo num recurso 
+benéfico para cada um e todos os programadores em Ruby, por aí.
 
-By the way, if you're into Rails you might want to check out the
-complementary
+Já agora, se andar pelo Rails poderá também desejar ver o complemento
 [Ruby on Rails 3 Style Guide](https://github.com/bbatsov/rails-style-guide).
 
-# The Ruby Style Guide
+# O Guia de Estilo Ruby
 
-This Ruby style guide recommends best practices so that real-world Ruby
-programmers can write code that can be maintained by other real-world Ruby
-programmers. A style guide that reflects real-world usage gets used, and a
-style guide that holds to an ideal that has been rejected by the people it is
-supposed to help risks not getting used at all &ndash; no matter how good it is.
+Este guia de estilo Ruby recomenda as melhores práticas de modo a que
+programadores do mundo real possam escrever código que possa ser mantido por
+outros programadores reais. Um guia de estilo também reflete a utilização
+corrente do mundo real e uma guia de estilo que retem um ideal que foi rejeitado
+pelas pessoas que era suposto ajudar arrisca a naão ser usado de todo &ndash; 
+independentemente de quão bom seja.
 
-The guide is separated into several sections of related rules. I've
-tried to add the rationale behind the rules (if it's omitted I've
-assumed that is pretty obvious).
+Este guia está repartido em várias secções de regras que estão interrelacionadas.
+Tentei explicar as razões por detrás das regras (se as omiti é porque 
+presumi que sejam evidentes).
 
-I didn't come up with all the rules out of nowhere - they are mostly
-based on my extensive career as a professional software engineer,
-feedback and suggestions from members of the Ruby community and
-various highly regarded Ruby programming resources, such as
-["Programming Ruby 1.9"](http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0)
-and ["The Ruby Programming Language"](http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177).
+Não criei todas estas regras do nada - elas são na maior parte baseadas na minha
+extensa carreira como engenheiro de sofware, retroalimentação e sugestões de 
+membros da comunidade Ruby e recursos de programação de elevado nível, tais 
+como ["Programming Ruby 1.9"](http://pragprog.com/book/ruby4/programming-ruby-1-9-2-0)
+e ["The Ruby Programming Language"](http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177).
 
-The guide is still a work in progress - some rules are lacking
-examples, some rules don't have examples that illustrate them clearly
-enough. In due time these issues will be addressed - just keep them in
-mind for now.
+O guia é um trabalho ainda em evolução - algumas regras não têm 
+exemplos, algumas não têm exemplos que sejam suficientemente ilustrativos.
+No devido tempo estes detalhes serão tratados - mas tenha isso em mente
+por agora.
 
-You can generate a PDF or an HTML copy of this guide using
+Pode gerar um cópia, deste guia, em ficheiro PDF ou HTML usando
 [Transmuter](https://github.com/TechnoGate/transmuter).
 
-[RuboCop](https://github.com/bbatsov/rubocop) is a code analyzer,
-based on this style guide.
+[RuboCop](https://github.com/bbatsov/rubocop) é um analisador de código 
+baseado neste guia de estilo.
 
-Translations of the guide are available in the following languages:
+O original deste guia, em inglês encontra-se em:
+ [Inglês](https://github.com/bbatsov/ruby-style-guide/blob/master/README.md)
 
-* [Chinese Simplified](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md)
-* [Chinese Traditional](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhTW.md)
-* [French](https://github.com/porecreat/ruby-style-guide/blob/master/README-frFR.md)
 
-## Table of Contents
+Estão disponíveis traduções deste guia nas seguintes linguas:
 
-* [Source Code Layout](#source-code-layout)
-* [Syntax](#syntax)
-* [Naming](#naming)
-* [Comments](#comments)
-    * [Comment Annotations](#comment-annotations)
+* [Chinês simplificado](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhCN.md)
+* [Chinês tradicional](https://github.com/JuanitoFatas/ruby-style-guide/blob/master/README-zhTW.md)
+* [Francês](https://github.com/porecreat/ruby-style-guide/blob/master/README-frFR.md)
+
+## Tabela de Conteúdos
+
+* [Arranjo do código fonte](#source-code-layout)
+* [Sintaxe](#syntax)
+* [Nomeação](#naming)
+* [Comentários](#comments)
+    * [Comentário Anotação](#comment-annotations)
 * [Classes](#classes--modules)
-* [Exceptions](#exceptions)
-* [Collections](#collections)
+* [Excepções](#exceptions)
+* [Colecções](#collections)
 * [Strings](#strings)
-* [Regular Expressions](#regular-expressions)
-* [Percent Literals](#percent-literals)
-* [Metaprogramming](#metaprogramming)
-* [Misc](#misc)
-* [Tools](#tools)
+* [Expressões regulares](#regular-expressions)
+* [Literais Percentagem](#percent-literals)
+* [Metaprogramação](#metaprogramming)
+* [Vários](#misc)
+* [Ferramentas](#tools)
 
 ## Source Code Layout
 
-> Nearly everybody is convinced that every style but their own is
-> ugly and unreadable. Leave out the "but their own" and they're
-> probably right... <br/>
-> -- Jerry Coffin (on indentation)
+> Praticamente toda a gente acha que todos os estilos excepto o do próprio
+> são feios e ilegíveis. Deixe de fora "excepto o meu" e estarão provavelmente
+> correctos... <br/>
+> -- Jerry Coffin (sobre recorte)
 
-* Use `UTF-8` as the source file encoding.
-* Use two **spaces** per indentation level. No hard tabs.
+* Usar `UTF-8` como codificação de ficheiro fonte.
+* Usar dois **espaços** por nível de recorte. Não usar tabulação.
 
     ```Ruby
-    # bad - four spaces
-    def some_method
-        do_something
+    # mau - quatro espaços
+    def algum_metodo
+        fazer_algo
     end
 
-    # good
-    def some_method
-      do_something
+    # bom
+    def algum_metodo
+      fazer_algo
     end
     ```
 
