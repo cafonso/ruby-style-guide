@@ -175,10 +175,10 @@ Estão disponíveis traduções deste guia nas seguintes linguas:
     def no_op; end
     ```
 
-* Use spaces around operators, after commas, colons and semicolons, around `{`
-  and before `}`. Whitespace might be (mostly) irrelevant to the Ruby
-  interpreter, but its proper use is the key to writing easily
-  readable code.
+* Usar espaços à volta de opweradores, depois de dois pontos e ponto e vírgula
+  à volta de chavetas `{` e  `}`. Os espaço em branco pode ser (praticamente) 
+  irrelevante para o interpretador Ruby, mas o seu uso adequado é chave para
+  se escrever código fácil de interpretar.
 
     ```Ruby
     sum = 1 + 2
@@ -187,41 +187,41 @@ Estão disponíveis traduções deste guia nas seguintes linguas:
     [1, 2, 3].each { |e| puts e }
     ```
 
-    The only exception, regarding operators, is the exponent operator:
+    A única excepção, relativa a operadores é o operador expoente:
 
     ```Ruby
-    # bad
+    # mau
     e = M * c ** 2
 
-    # good
+    # bom
     e = M * c**2
     ```
 
-    `{` and `}` deserve a bit of clarification, since they are used
-    for block and hash literals, as well as embedded expressions in
-    strings. For hash literals two styles are considered acceptable.
+    `{` e `}` merece alguma clarificação, pois são usados em
+    blocos e quadros associativos, assim como em expressões embebidas em strings.
+    Para quadros associativos são considerasdos são considerados aceitáveis dois
+    estilos.
 
     ```Ruby
-    # good - space after { and before }
-    { one: 1, two: 2 }
+    # bom - espaço antes { e depois }
+    { um: 1, dois: 2 }
 
-    # good - no space after { and before }
-    {one: 1, two: 2}
+    # bom - sem espaço antes { nem depois }
+    {um: 1, dois: 2}
     ```
 
-    The first variant is slightly more readable (and arguably more
-    popular in the Ruby community in general). The second variant has
-    the advantage of adding visual difference between block and hash
-    literals. Whichever one you pick - apply it consistently.
+    A primeira variante é ligeiramente mais legível (e argumentasse mais
+    popular na comunidade Ruby em geral). A segunda variante tem a vantagem
+    de adicionar a diferença visual entre bloco e quadro associativo.
+    Qualquer que seja a sua escolha - aplique-a de forma consistente.
 
-    As far as embedded expressions go, there are also two acceptable
-    options:
+    Para as expressões embebidas também há duas opções aceitáveis:
 
     ```Ruby
-    # good - no spaces
+    # bom - sem espaços
     "string#{expr}"
 
-    # ok - arguably more readable
+    # suficiente - pode argumentar-se ser mais legível
     "string#{ expr }"
     ```
 
