@@ -106,74 +106,72 @@ Estão disponíveis traduções deste guia nas seguintes linguas:
     end
     ```
 
-* Use Unix-style line endings. (*BSD/Solaris/Linux/OSX users are covered by default,
-  Windows users have to be extra careful.)
-    * If you're using Git you might want to add the following
-    configuration setting to protect your project from Windows line
-    endings creeping in:
+* Usar fins de linha ao estilo Unix. (*os utilizadores BSD/Solaris/Linux/OSX estão
+* cobertos por omissão, os utilizadores Windows têm que tem cuidados adicionais.)
+    * Se estiver a usar o Git pode ser que desej adicionar os seguintes ajustes
+    * de configuração para proteger o seu projecto de invasão de fins de linha Windows:
 
         $ git config --global core.autocrlf true
 
-* Don't use `;` to separate statements and expressions. As a
-  corollary - use one expression per line.
+* Não usar `;` para separar instruções e expressões. Corolário 
+  - usar uma expressão por linha.
 
     ```Ruby
-    # bad
-    puts 'foobar'; # superfluous semicolon
+    # mau
+    puts 'foobar'; # ponto e vírgula superfluo
 
-    puts 'foo'; puts 'bar' # two expression on the same line
+    puts 'foo'; puts 'bar' # duas expressões na mensma linha
 
-    # good
+    # bom
     puts 'foobar'
 
     puts 'foo'
     puts 'bar'
 
-    puts 'foo', 'bar' # this applies to puts in particular
+    puts 'foo', 'bar' # isto aplica-se especificamente a puts
     ```
 
-* Prefer a single-line format for class definitions with no body.
+* Dê preferência a definições de classe sem corpo num formato unilinear.
 
     ```Ruby
-    # bad
+    # mau
     class FooError < StandardError
     end
 
-    # okish
+    # maisoumenos
     class FooError < StandardError; end
 
-    # good
+    # bom
     FooError = Class.new(StandardError)
     ```
 
-* Avoid single-line methods. Although they are somewhat popular in the
-  wild, there are a few peculiarities about their definition syntax
-  that make their use undesirable. At any rate - there should no more
-  than one expression in a single-line method.
+* Evite métodos unilineares. Embora sejam frequentes, há algumas peculiaridades
+  sobre a sua síntaxe de definição que o tornam o seu uso  indesejável- não deverá
+  haver mais do que única expressão em métodos unilineare.
 
     ```Ruby
-    # bad
+    # mau
     def too_much; something; something_else; end
 
-    # okish - notice that the first ; is required
+    # maisoumenos - note que o primeiro ponto e vírgula é obrigatório
     def no_braces_method; body end
 
-    # okish - notice that the second ; is optional
+    # maisooumenos - note que o segundo ; é opcional
     def no_braces_method; body; end
 
-    # okish - valid syntax, but no ; make it kind of hard to read
+    # maisoumenos - síntaxe válida, mas a ausência de ponto e vírgula dificultam a leiura
     def some_method() body end
 
-    # good
+    # bom
     def some_method
       body
     end
     ```
 
-    One exception to the rule are empty-body methods.
+    Uma excepção à regra são os métodos com corpo vazio.
 
     ```Ruby
-    # good
+    # bom
     def no_op; end
     ```
 
