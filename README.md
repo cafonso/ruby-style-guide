@@ -175,7 +175,7 @@ Estão disponíveis traduções deste guia nas seguintes linguas:
     def no_op; end
     ```
 
-* Usar espaços à volta de opweradores, depois de dois pontos e ponto e vírgula
+* Use espaços à volta de operadores, depois de dois pontos, ponto e vírgula e
   à volta de chavetas `{` e  `}`. Os espaço em branco pode ser (praticamente) 
   irrelevante para o interpretador Ruby, mas o seu uso adequado é chave para
   se escrever código fácil de interpretar.
@@ -225,35 +225,35 @@ Estão disponíveis traduções deste guia nas seguintes linguas:
     "string#{ expr }"
     ```
 
-    The first style is extremely more popular and you're generally
-    advised to stick with it. The second, on the other hand, is
-    (arguably) a bit more readable. As with hashes - pick one style
-    and apply it consistently.
+    O primeiro estilo é extremamente mais popular e aconselhasse para se
+    manter a usar o mesmo. O segundo por outro lado é (eventualmente mais
+    legível . Tal como nos quadros associativos -escolha um estilo e 
+    e aplique-o de forma consistente.
 
-* No spaces after `(`, `[` or before `]`, `)`.
+* Não use espaços após `(`, `[` ou antes de `]`, `)`.
 
     ```Ruby
-    some(arg).other
+    algum(arg).outro
     [1, 2, 3].length
     ```
 
-* Indent `when` as deep as `case`. I know that many would disagree
-  with this one, but it's the style established in both "The Ruby
-  Programming Language" and "Programming Ruby".
+* Recorte `when` de modo tão profundo quanto `case`. Sei que muitas pessoas 
+  estão em desacordo com esta regra, mas é o estilo indicado tanto em "The Ruby
+  Programming Language" e "Programming Ruby".
 
     ```Ruby
     case
-    when song.name == 'Misty'
-      puts 'Not again!'
-    when song.duration > 120
-      puts 'Too long!'
+    when musica.nome == 'Misty'
+      puts 'Outra vez não por favor!'
+    when musica.duracao > 120
+      puts 'Demasiado longa!'
     when Time.now.hour > 21
-      puts "It's too late"
+      puts "Demasido tarde"
     else
-      song.play
+      musica.tocar
     end
 
-    kind = case year
+    genero = case ano
            when 1850..1889 then 'Blues'
            when 1890..1909 then 'Ragtime'
            when 1910..1929 then 'New Orleans Jazz'
